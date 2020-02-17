@@ -7,8 +7,11 @@ import android.view.Menu
 import android.view.MenuItem
 import com.example.migrate.R
 import com.example.migrate.adapter.ListBloquinhosAdapter
+import com.example.migrate.model.Blocos
 
 import kotlinx.android.synthetic.main.activity_main.*
+import java.math.BigDecimal
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +24,14 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
-        var blocosCarnaval = listOf("Minhoqueens","Sai Hetero", "Bloco da Pablo");
+        var blocosCarnaval = listOf(Blocos(
+            BigDecimal(200),
+            Calendar.getInstance(),
+            "Minhoqueens"),
+            Blocos(
+            BigDecimal(100),
+            Calendar.getInstance(),
+            "Bloco Pablo"));
 
         lista_blocos_carnaval.adapter = ListBloquinhosAdapter(blocosCarnaval,this);
     }

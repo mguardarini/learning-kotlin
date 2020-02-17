@@ -6,20 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.migrate.R
+import com.example.migrate.model.Blocos
 
 class ListBloquinhosAdapter(
-    bloquinhos: List<String>,
+    blocosCarnaval: List<Blocos>,
     context: Context) : BaseAdapter() {
 
-    private val bloquinhos = bloquinhos;
+    private val blocosCarnaval = blocosCarnaval;
     private val context = context;
 
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View {
         return LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
     }
 
-    override fun getItem(position: Int): String {
-        return bloquinhos[position];
+    override fun getItem(position: Int): Blocos {
+        return blocosCarnaval[position];
     }
 
     override fun getItemId(position: Int): Long {
@@ -27,6 +28,6 @@ class ListBloquinhosAdapter(
     }
 
     override fun getCount(): Int {
-        return bloquinhos.size;
+        return blocosCarnaval.size;
     }
 }
