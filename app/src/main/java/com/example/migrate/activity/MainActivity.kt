@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
 import com.example.migrate.R
+import com.example.migrate.adapter.ListItensAdapter
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
         var blocosCarnaval = listOf("Minhoqueens","Sai Hetero", "Bloco da Pablo");
 
-        lista_blocos_carnaval.adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,blocosCarnaval);
+        lista_blocos_carnaval.adapter = ListItensAdapter(blocosCarnaval,this);
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
