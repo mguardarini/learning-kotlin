@@ -5,9 +5,8 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ArrayAdapter
 import com.example.migrate.R
-import com.example.migrate.adapter.ListItensAdapter
+import com.example.migrate.adapter.ListBloquinhosAdapter
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
         var blocosCarnaval = listOf("Minhoqueens","Sai Hetero", "Bloco da Pablo");
 
-        lista_blocos_carnaval.adapter = ListItensAdapter(blocosCarnaval,this);
+        lista_blocos_carnaval.adapter = ListBloquinhosAdapter(blocosCarnaval,this);
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

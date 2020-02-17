@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.migrate.R
 
-class ListItensAdapter(
+class ListBloquinhosAdapter(
     bloquinhos: List<String>,
     context: Context) : BaseAdapter() {
 
