@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.migrate.R
+import com.example.migrate.extension.formatoBrasileiro
 import com.example.migrate.model.Blocos
+import kotlinx.android.synthetic.main.bloquinho_item.view.*
 
 class ListBloquinhosAdapter(
     blocosCarnaval: List<Blocos>,
@@ -16,7 +18,14 @@ class ListBloquinhosAdapter(
     private val context = context;
 
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View {
-        return LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
+        var viewCriada = LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
+        var blocos = blocosCarnaval[position];
+
+        viewCriada.bloco_valor.text = blocos.valor.toString();
+        viewCriada.bloco_categoria.text = blocos.categoria;
+        viewCriada.bloco_data.text = blocos.date.formatoBrasileiro();
+
+        return viewCriada;
     }
 
     override fun getItem(position: Int): Blocos {
@@ -30,4 +39,5 @@ class ListBloquinhosAdapter(
     override fun getCount(): Int {
         return blocosCarnaval.size;
     }
+
 }
