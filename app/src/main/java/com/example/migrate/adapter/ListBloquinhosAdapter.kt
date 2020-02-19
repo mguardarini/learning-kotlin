@@ -8,36 +8,36 @@ import android.widget.BaseAdapter
 import androidx.core.content.ContextCompat
 import com.example.migrate.R
 import com.example.migrate.extension.formatoBrasileiro
-import com.example.migrate.model.Blocos
+import com.example.migrate.model.CarnivalBlocksModel
 import com.example.migrate.model.Tipo
 import kotlinx.android.synthetic.main.bloquinho_item.view.*
 
 class ListBloquinhosAdapter(
-    blocosCarnaval: List<Blocos>,
+    blocosCarnaval: List<CarnivalBlocksModel>,
     context: Context) : BaseAdapter() {
 
     private val blocosCarnaval = blocosCarnaval;
     private val context = context;
 
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View {
-        var viewCriada  = LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
+        var viewCarnivalBlocks  = LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
         var blocos = blocosCarnaval[position];
 
-        viewCriada.bloco_valor.text = blocos.valor.toString();
-        viewCriada.bloco_categoria.text = blocos.categoria;
-        viewCriada.bloco_data.text = blocos.date.formatoBrasileiro();
+        viewCarnivalBlocks.bloco_quantidade_pessoas.text = blocos.quantityPeople.toString();
+        viewCarnivalBlocks.bloco_nome.text = blocos.name;
+        viewCarnivalBlocks.bloco_data.text = blocos.date.formatoBrasileiro();
 
         var bloco = blocosCarnaval[position];
 
-        if(bloco.tipo == Tipo.LGBTQ)
-            viewCriada.bloco_valor.setTextColor(ContextCompat.getColor(context,R.color.colorPrimary))
+        if(bloco.type == Tipo.LGBTQ)
+            viewCarnivalBlocks.bloco_nome.setTextColor(ContextCompat.getColor(context,R.color.colorPrimary))
         else
-            viewCriada.bloco_valor.setTextColor(ContextCompat.getColor(context,R.color.design_default_color_primary_dark))
+            viewCarnivalBlocks.bloco_nome.setTextColor(ContextCompat.getColor(context,R.color.design_default_color_primary_dark))
 
-        return viewCriada;
+        return viewCarnivalBlocks;
     }
 
-    override fun getItem(position: Int): Blocos {
+    override fun getItem(position: Int): CarnivalBlocksModel {
         return blocosCarnaval[position];
     }
 

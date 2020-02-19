@@ -21,7 +21,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/bloco_categoria"
+                    android:id="@+id/bloco_nome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -39,7 +39,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/bloco_valor"
+                android:id="@+id/bloco_quantidade_pessoas"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
