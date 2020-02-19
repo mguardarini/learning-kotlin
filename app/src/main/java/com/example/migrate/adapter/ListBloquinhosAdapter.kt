@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import androidx.core.content.ContextCompat
 import com.example.migrate.R
 import com.example.migrate.extension.formatoBrasileiro
 import com.example.migrate.model.Blocos
+import com.example.migrate.model.Tipo
 import kotlinx.android.synthetic.main.bloquinho_item.view.*
 
 class ListBloquinhosAdapter(
@@ -18,12 +20,19 @@ class ListBloquinhosAdapter(
     private val context = context;
 
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View {
-        var viewCriada = LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
+        var viewCriada  = LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
         var blocos = blocosCarnaval[position];
 
         viewCriada.bloco_valor.text = blocos.valor.toString();
         viewCriada.bloco_categoria.text = blocos.categoria;
         viewCriada.bloco_data.text = blocos.date.formatoBrasileiro();
+
+        var bloco = blocosCarnaval[position];
+
+        if(bloco.tipo == Tipo.LGBTQ)
+            viewCriada.bloco_valor.setTextColor(ContextCompat.getColor(context,R.color.colorPrimary))
+        else
+            viewCriada.bloco_valor.setTextColor(ContextCompat.getColor(context,R.color.design_default_color_primary_dark))
 
         return viewCriada;
     }
