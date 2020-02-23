@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import androidx.core.content.ContextCompat
 import com.example.migrate.R
-import com.example.migrate.extension.formatoBrasileiro
+import com.example.migrate.extension.BrazilianPriceFormat
+import com.example.migrate.extension.BrazilianDateFormat
 import com.example.migrate.model.CarnivalBlocksModel
 import com.example.migrate.model.Tipo
 import kotlinx.android.synthetic.main.bloquinho_item.view.*
@@ -22,10 +23,9 @@ class ListBloquinhosAdapter(
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View {
         var viewCarnivalBlocks  = LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
         var blocos = blocosCarnaval[position];
-
-        viewCarnivalBlocks.bloco_quantidade_pessoas.text = blocos.quantityPeople.toString();
+        viewCarnivalBlocks.bloco_price.text = blocos.price.BrazilianPriceFormat();
         viewCarnivalBlocks.bloco_nome.text = blocos.name;
-        viewCarnivalBlocks.bloco_data.text = blocos.date.formatoBrasileiro();
+        viewCarnivalBlocks.bloco_data.text = blocos.date.BrazilianDateFormat();
 
         var bloco = blocosCarnaval[position];
 

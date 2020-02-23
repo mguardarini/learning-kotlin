@@ -6,19 +6,20 @@ import java.math.BigDecimal
 import java.util.*
 
 fun MockCarnivalBlocks() : List<CarnivalBlocksModel> {
+
     return listOf(
         CarnivalBlocksModel(
-            quantityPeople = BigDecimal(200),
+            price = "200.0",
             date = Calendar.getInstance(),
             type = Tipo.LGBTQ,
             name = "Minhoqueens"),
         CarnivalBlocksModel(
-            quantityPeople = BigDecimal(100),
+            price = "120.3",
             date = Calendar.getInstance(),
             type = Tipo.LGBTQ,
             name = "Bloco Pablo"),
         CarnivalBlocksModel(
-            quantityPeople = BigDecimal(100),
+            price = "125.7",
             date = Calendar.getInstance(),
             type = Tipo.ALTERNATIVO,
             name = "Bloco do Alok")

@@ -39,7 +39,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/bloco_quantidade_pessoas"
+                android:id="@+id/bloco_price"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"

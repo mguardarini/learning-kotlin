@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-fun Calendar.formatoBrasileiro():String
+fun Calendar.BrazilianDateFormat():String
 {
     var formatoBrasileiro = SimpleDateFormat("dd/MM/yyyy");
     return formatoBrasileiro.format(this.time);
