@@ -1,11 +1,11 @@
 package com.example.migrate.mock
 
-import com.example.migrate.model.CarnivalBlocksModel
+import com.example.migrate.model.CarnivalBlockModel
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 internal class ListCarnivalBlocksTest {
-    private val actualCarnivalBlocksList: List<CarnivalBlocksModel> = MockCarnivalBlocks();
+    private val actualCarnivalBlocksList: List<CarnivalBlockModel> = MockCarnivalBlocks();
 
     @Test
     fun shouldBeReturnThreeElementsInArray() {

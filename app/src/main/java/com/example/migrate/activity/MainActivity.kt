@@ -5,7 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.migrate.R
-import com.example.migrate.adapter.ListBloquinhosAdapter
+import com.example.migrate.adapter.CarnivalBlocksAdapter
 import com.example.migrate.mock.MockCarnivalBlocks
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,8 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        lista_blocos_carnaval.adapter = ListBloquinhosAdapter(MockCarnivalBlocks(),this);
+        ConfigurationList();
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -29,5 +28,9 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun ConfigurationList(){
+        lista_blocos_carnaval.adapter = CarnivalBlocksAdapter(MockCarnivalBlocks(),this);
     }
 }
