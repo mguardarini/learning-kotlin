@@ -12,7 +12,9 @@ import com.example.migrate.extension.BrazilianDateFormat
 import com.example.migrate.extension.CaracteresLimitAt
 import com.example.migrate.model.CarnivalBlockModel
 import com.example.migrate.model.CarnivalBlockType
+import dagger.Provides
 import kotlinx.android.synthetic.main.bloquinho_item.view.*
+import javax.inject.Inject;
 
 class CarnivalBlocksAdapter(
     private val carnivalBlockList: List<CarnivalBlockModel>,
@@ -22,7 +24,6 @@ class CarnivalBlocksAdapter(
 
         var viewCarnivalBlocks  = LayoutInflater.from(context).inflate(R.layout.bloquinho_item,parent,false);
         var carnivalBlockItem = carnivalBlockList[position];
-
         AddName(position, viewCarnivalBlocks, carnivalBlockItem)
         AddPrice(viewCarnivalBlocks, carnivalBlockItem)
         AddDate(viewCarnivalBlocks, carnivalBlockItem)
